@@ -9,19 +9,26 @@ $yellow: #f9f910;
 
 html, body {
   overflow-x: hidden;
+  background: black;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 header {
   position: fixed;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
+  mix-blend-mode: unset;
 }
 
 .page-content {
   padding-top: 0;
+  background: white;
+  color: black;
+  mix-blend-mode: exclusion;
 }
 
 .section-links {
@@ -57,10 +64,11 @@ section {
   padding-top: 40px;
 
   .heading {
-    color: white;
-    background: $blue;
+    color: black;
+    background: $yellow;
     text-align: center;
     margin-bottom: 1rem;
+    mix-blend-mode: exclusion;
   }
   .verse {
     margin-bottom: 0.5rem;
@@ -71,11 +79,11 @@ section {
 
 .modal-trigger {
   position: fixed;
-  top: 5px;
-  right: 15px;
+  top: 7px;
+  right: 48px;
   border-radius: 50%;
-  background: $blue;
-  color: white;
+  background: $yellow;
+  color: black;
   display: block;
   height: 25px;
   width: 25px;
@@ -182,8 +190,8 @@ section {
 
 .site-footer {
   border-top: 30px solid $blue;
+  mix-blend-mode: hard-light;
   background: white;
   color: black;
-  position: absolute;
-  width: 100%;
+  z-index: 10;
 }
