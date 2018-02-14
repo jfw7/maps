@@ -4,6 +4,188 @@
 
 @import "minima";
 
-.verse {
-  margin-bottom: 1rem;
+$blue: #1010f9;
+
+html, body {
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  background: black;
+  color: white;
+  width: 100%;
+  z-index: 10;
+}
+
+.page-content {
+  padding-top: 0;
+}
+
+.section-links {
+  position: fixed;
+  top: 140px;
+  right: 30px;
+
+  a {
+    color: white;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    display: block;
+
+    &:before {
+      content: '';
+      display: block;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 30px solid $blue;
+      width: 0;
+      height: 0;
+      margin-left: -25px;
+      position: relative;
+      top: 25px;
+      z-index: -1;
+    }
+  }
+}
+
+section {
+  font-size: 15px;
+  padding-top: 75px;
+
+  h2 {
+    color: white;
+    background: $blue;
+    mix-blend-mode: exclusion;
+    text-align: center;
+    margin-left: -60px;
+    margin-right: -60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    .source {
+      font-size: 80%;
+    }
+  }
+  .verse {
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+
+.modal-trigger {
+  position: fixed;
+  bottom: 10px;
+  right: 48px;
+  color: white;
+  border-radius: 50%;
+  background: $blue;
+  display: block;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0, .9);
+  transition: opacity .25s ease;
+  z-index: 10;
+}
+
+.modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 40%;
+}
+
+.modal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: $blue;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+  background: #aaa;
+}
+
+.modal__close:before {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    font-size: 12px;
+  }
+
+  .modal__inner {
+    width: 80%;
+    height: 60%;
+    box-sizing: border-box;
+  }
+}
+
+
+.site-footer {
+  border-top: 30px solid $blue;
+  mix-blend-mode: hard-light;
+  background: white;
+  z-index: 10;
 }

@@ -1,25 +1,48 @@
 ---
 layout: default
 ---
-
-<section>
+<div class="section-links">
+  <a class="section-link" href="#0">0</a>
+  <a class="section-link" href="#1">1</a>
+  <a class="section-link" href="#2">2</a>
+  <a class="section-link" href="#3">3</a>
+  <a class="section-link" href="#4">4</a>
+  <a class="section-link" href="#5">5</a>
+  <a class="section-link" href="#6">6</a>
+</div>
+<label for="modal" class="modal-trigger">?</label>
+<input class="modal-state" id="modal" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal"></label>
+    <h3>Maps</h3>
+    <h4>Nick Rich + Jonathan Wall</h4>
+    <i>Maps</i> is a series of digital transformations of Emily Dickinson's poem
+    "I cross till I am weary". 6 variations on the poem were created
+    using speech recognition software.
+    Each variation uses a distinct source text to "map" the sounds of the
+    original poem onto the closest available phonemes in a new vocabulary.
+  </div>
+</div>
+<section id="0">
   {% include 0-prologue.html %}
 </section>
-<section>
+<section id="1">
   {% include 1-mountain.html %}
 </section>
-<section>
+<section id="2">
   {% include 2-grains.html %}
 </section>
-<section>
+<section id="3">
   {% include 3-rest.html %}
 </section>
-<section>
+<section id="4">
   {% include 4-doubt.html %}
 </section>
-<section>
+<section id="5">
   {% include 5-shout.html %}
 </section>
-<section>
+<section id="6">
   {% include 6-die.html %}
 </section>
