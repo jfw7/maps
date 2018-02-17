@@ -11,6 +11,10 @@ html, body {
   overflow-x: hidden;
 }
 
+body {
+  mix-blend-mode: color;
+}
+
 header {
   position: fixed;
   background: black;
@@ -28,13 +32,12 @@ header {
   position: fixed;
   top: 65px;
   right: 30px;
-
   a {
-    color: white;
     padding-left: 25px;
     margin-bottom: -15px;
-    margin-top: 10px;
+    margin-top: 18px;
     display: block;
+    color: #fdfdfd;
 
     &:before {
       content: '';
@@ -61,6 +64,7 @@ section {
     background: $blue;
     text-align: center;
     margin-bottom: 1rem;
+    mix-blend-mode: difference;
   }
   .verse {
     margin-bottom: 0.5rem;
